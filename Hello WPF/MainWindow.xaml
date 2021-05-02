@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hello_WPF"
         mc:Ignorable="d"
-        Title="My GUI" Height="600" Width="1000" FontFamily="Courier New">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="79*"/>
-            <ColumnDefinition Width="916*"/>
-        </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="257.792,240,0,0" TextWrapping="Wrap" Text="Hello WPF!" VerticalAlignment="Top" Height="54" Width="294" FontFamily="Courier New" FontSize="48" RenderTransformOrigin="0.523,1.081" Grid.Column="1"/>
-
-    </Grid>
+        Title="My GUI" Height="342.261" Width="685.181" FontFamily="Courier New" Background="#FFE1E06B">
+    <StackPanel>
+        <TextBlock HorizontalAlignment="Center" Margin="10">Some text</TextBlock>
+        <ListBox Width="200">
+            <ListBoxItem>Item 1</ListBoxItem>
+            <ListBoxItem>Item 2</ListBoxItem>
+            <ListBoxItem>Item 3</ListBoxItem>
+            <ListBoxItem>Item 4</ListBoxItem>
+        </ListBox>
+        <Button Width="100" Margin="15" PreviewMouseUp="Button_PreviewMouseUp">Click Me!</Button>
+    </StackPanel>
 </Window>
