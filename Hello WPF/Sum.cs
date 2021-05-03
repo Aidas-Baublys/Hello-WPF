@@ -9,7 +9,7 @@ namespace Hello_WPF
 {
     public class Sum : INotifyPropertyChanged
     {
-        private string num1;
+        private string num1; 
         private string num2;
         private string result;
 

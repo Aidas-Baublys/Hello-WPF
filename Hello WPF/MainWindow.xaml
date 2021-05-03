@@ -5,13 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Hello_WPF"
         mc:Ignorable="d"
-        Title="My GUI" Height="342.261" Width="685.181" FontFamily="Courier New" Background="#FFE1E06B">
-    <StackPanel>
-        <Label Margin="223,0,222.4,0">Num 1</Label>
-        <TextBox Margin="223,0,222.4,0" Height="35" Text="{Binding Path=Num1, Mode=TwoWay}"/>
-        <Label Margin="223,0,222.4,0">Num 2</Label>
-        <TextBox Margin="223,0,222.4,0" Height="35" Text="{Binding Path=Num2, Mode=TwoWay}"/>
-        <Label Margin="223,0,222.4,0">SUM</Label>
-        <TextBox Margin="223,0,222.4,0" Height="35" Text="{Binding Path=Result, Mode=TwoWay}"/>
-    </StackPanel>
+        Title="My GUI" Height="342.261" Width="770" FontFamily="Courier New" Background="#FFE1E06B">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="650"/>
+            <ColumnDefinition Width="120"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="Matches" HorizontalAlignment="Stretch" Background="BlanchedAlmond">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="2" Width="600">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding Team1}"/>
+                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Score1}"/>
+                        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text=":"/>
+                        <TextBlock Grid.Column="3" HorizontalAlignment="Center" Text="{Binding Score2}"/>
+                        <TextBlock Grid.Column="4" HorizontalAlignment="Center" Text="{Binding Team2}"/>
+                        <ProgressBar Grid.Column="5" Minimum="0" Maximum="100" Value="{Binding Progress}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Grid.Column="1" Click="Button_Click">More Info</Button>
+    </Grid>
 </Window>
