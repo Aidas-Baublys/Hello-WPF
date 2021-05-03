@@ -17,9 +17,14 @@ namespace Hello_WPF
 {
     public partial class MainWindow : Window
     {
+        public Sum Sum { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+
+            Sum = new Sum { Num1 = "0", Num2 = "0" };
+            this.DataContext = Sum;
         }
     }
 }

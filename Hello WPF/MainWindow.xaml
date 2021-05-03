@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:Hello_WPF"
         mc:Ignorable="d"
         Title="My GUI" Height="342.261" Width="685.181" FontFamily="Courier New" Background="#FFE1E06B">
-    <Grid>
-        <TextBox Margin="252,98,263.4,184.2" 
-                 RenderTransformOrigin="0.466,-0.91" 
-                 Text="{Binding ElementName=slider, Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <Slider Name="slider" IsSnapToTickEnabled="True" Minimum="0" Maximum="100" Margin="36,171,46.4,114.2"/>
-    </Grid>
+    <StackPanel>
+        <Label Margin="223,0,222.4,0">Num 1</Label>
+        <TextBox Margin="223,0,222.4,0" Height="35" Text="{Binding Path=Num1, Mode=TwoWay}"/>
+        <Label Margin="223,0,222.4,0">Num 2</Label>
+        <TextBox Margin="223,0,222.4,0" Height="35" Text="{Binding Path=Num2, Mode=TwoWay}"/>
+        <Label Margin="223,0,222.4,0">SUM</Label>
+        <TextBox Margin="223,0,222.4,0" Height="35" Text="{Binding Path=Result, Mode=TwoWay}"/>
+    </StackPanel>
 </Window>
