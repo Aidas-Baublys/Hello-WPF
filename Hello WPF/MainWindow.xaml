@@ -7,15 +7,16 @@
         mc:Ignorable="d"
         Title="My GUI" Height="342.261" Width="770" FontFamily="Courier New" Background="#FFE1E06B">
     <StackPanel>
-        <ComboBox Name="ColorComboBox" Height="40">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Rectangle Fill="{Binding Name}" Width="32" Height="32" Margin="5"/>
-                        <TextBlock Text="{Binding Name}" FontSize="32"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+        <Label FontWeight="Bold">Pizza Topings</Label>
+        <CheckBox Name="Topings" Margin="10,0" IsThreeState="True" Checked="Topings_Checked" Unchecked="Topings_Checked">Add All</CheckBox>
+        <StackPanel Margin="20,5">
+            <CheckBox Name="Salami" Padding="4,2" Checked="SingleCheckedChanged" Unchecked="SingleCheckedChanged">
+                <TextBlock>
+                    Salami <Run Foreground="Red" FontWeight="Bold">Spicy</Run>
+                </TextBlock>
+            </CheckBox>
+            <CheckBox Name="Mushrooms" Padding="4,2" Checked="SingleCheckedChanged" Unchecked="SingleCheckedChanged">Mushrooms</CheckBox>
+            <CheckBox Name="Shit" Padding="4,2" Checked="SingleCheckedChanged" Unchecked="SingleCheckedChanged">Shit</CheckBox>
+        </StackPanel>
     </StackPanel>
 </Window>

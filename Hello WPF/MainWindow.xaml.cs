@@ -20,8 +20,25 @@ namespace Hello_WPF
         public MainWindow()
         {
             InitializeComponent();
-            
-            ColorComboBox.ItemsSource = typeof(Colors).GetProperties();
+        }
+
+        private void Topings_Checked(object sender, RoutedEventArgs e)
+        {
+            bool allChecked = Topings.IsChecked == true;
+            Salami.IsChecked = allChecked;
+            Mushrooms.IsChecked = allChecked;
+            Shit.IsChecked = allChecked;
+        }
+
+        private void SingleCheckedChanged(object sender, RoutedEventArgs e)
+        {
+            Topings.IsChecked = null;
+
+            if (Salami.IsChecked == true && Mushrooms.IsChecked == true && Shit.IsChecked == true)
+                Topings.IsChecked = true;
+
+            if (Salami.IsChecked == false && Mushrooms.IsChecked == false && Shit.IsChecked == false)
+                Topings.IsChecked = false;
         }
     }
 }
