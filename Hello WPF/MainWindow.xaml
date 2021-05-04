@@ -6,33 +6,16 @@
         xmlns:local="clr-namespace:Hello_WPF"
         mc:Ignorable="d"
         Title="My GUI" Height="342.261" Width="770" FontFamily="Courier New" Background="#FFE1E06B">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="650"/>
-            <ColumnDefinition Width="120"/>
-        </Grid.ColumnDefinitions>
-        <ListBox Name="Matches" HorizontalAlignment="Stretch" Background="BlanchedAlmond">
-            <ListBox.ItemTemplate>
+    <StackPanel>
+        <ComboBox Name="ColorComboBox" Height="40">
+            <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <Grid Margin="2" Width="600">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock HorizontalAlignment="Center" Text="{Binding Team1}"/>
-                        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Text="{Binding Score1}"/>
-                        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Text=":"/>
-                        <TextBlock Grid.Column="3" HorizontalAlignment="Center" Text="{Binding Score2}"/>
-                        <TextBlock Grid.Column="4" HorizontalAlignment="Center" Text="{Binding Team2}"/>
-                        <ProgressBar Grid.Column="5" Minimum="0" Maximum="100" Value="{Binding Progress}"/>
-                    </Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <Rectangle Fill="{Binding Name}" Width="32" Height="32" Margin="5"/>
+                        <TextBlock Text="{Binding Name}" FontSize="32"/>
+                    </StackPanel>
                 </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <Button Grid.Column="1" Click="Button_Click">More Info</Button>
-    </Grid>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </StackPanel>
 </Window>
